@@ -13,8 +13,9 @@
         <input type="text" id="goal" v-model="enteredValue" />
         <button v-on:click="addGoal">Add Goal</button>
       </div>
+      <p v-if="goals.length === 0">No goals have been added. Plase start adding a goal</p>
       <ul>
-        <li v-for="goal in goals">{{ goal }}</li>
+        <li v-for="(goal,index) in goals" @click="removeGoal(index)">{{ goal }}</li>
       </ul>
     </div>
     <script src="https://unpkg.com/vue@next"></script>

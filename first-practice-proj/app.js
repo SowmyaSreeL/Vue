@@ -8,9 +8,12 @@ Vue.createApp({
 
     methods: {
         addGoal() {
-            console.log("here")
             this.goals.push(this.enteredValue);
             this.enteredValue = '';
+        },
+
+        removeGoal(index) {
+            this.goals.splice(index, 1)
         }
     }
 }).mount('#app')
