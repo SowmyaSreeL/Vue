@@ -18,9 +18,18 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button>Add</button>
-      <button>Remove</button>
+      <button v-on:click="addCounter">Add</button>
+      <button v-on:click="removeCounter">Remove</button>
       <p>Result: {{ counter }}</p>
     </section>
+
+
+    <section id="styling">
+      <div class="demo" :class="{active: boxASelected}" @click="boxSelected('A')"></div>
+      <div class="demo" :class="{active: boxBSelected}" @click="boxSelected('B')"></div>
+      <div class="demo" :class="{active: boxCSelected}" @click="boxSelected('C')"></div>
+    </section>
+
+
   </body>
 </html>
