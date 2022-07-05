@@ -29,7 +29,7 @@ app.component('friend-contact', {
       return {
         detailsVisible: false,
         friend: {
-            id: 'sowmya', name: 'Sowmya', phone: '1234567890', email: 'sowmya@gmail.com'
+            id: 'sowmya', name: 'Sowmya Lagishetti', phone: '1234567890', email: 'sowmya@gmail.com'
         }
       }
   },
