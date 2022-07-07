@@ -14,6 +14,14 @@
         <p>{{slotProps.anotherProp}}</p>
       </template>
     </course-goals>
+    <button @click="setActiveComp('active-goals')">Active Goals</button>
+    <button @click="setActiveComp('manage-goals')">Manage Goals</button>
+    <!-- <active-goals></active-goals>
+    <manage-goals></manage-goals> -->
+    <keep-alive>
+       <component :is="activeComp"></component>
+    </keep-alive>
+
   </div>
 </template>
 
@@ -21,16 +29,21 @@
 import BadgeList from './components/BadgeList.vue';
 import UserInfo from './components/UserInfo.vue';
 import TheHeader from './components/TheHeader.vue';
-import CourseGoals from './components/CourseGoals.vue'
+import CourseGoals from './components/CourseGoals.vue';
+import ActiveGoals  from './components/ActiveGoals.vue';
+import ManageGoals from './components/ManageGoals.vue';
 export default {
   components: {
     TheHeader,
     BadgeList,
     UserInfo,
-    CourseGoals
+    CourseGoals,
+    ActiveGoals,
+    ManageGoals
   },
   data() {
     return {
+      activeComp : 'active-goals',
       activeUser: {
         name: 'Maximilian Schwarzmüller',
         description: 'Site owner and admin',
@@ -38,6 +51,11 @@ export default {
       },
     };
   },
+  methods: {
+    setActiveComp(cmp) {
+      this.activeComp = cmp;
+    }
+  }
 };
 </script>
 
